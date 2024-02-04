@@ -3,9 +3,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { ShoppingCart, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { navigationLinks } from "@/utils/navigation-links";
+import ItemCart from "../cart/item-cart";
 
 export default function ResponsiveNavbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,7 +24,7 @@ export default function ResponsiveNavbar() {
                 )}
                 onClick={onMenuClick}
             ></div>
-            <div className="flex justify-between items-center py-8 border-b max-w-screen-lg mx-2 sm:mx-8 lg:mx-auto">
+            <div className="h-[15vh] flex justify-between items-center py-8 border-b max-w-screen-lg mx-2 sm:mx-8 lg:mx-auto">
                 <ul className="flex items-center gap-2 sm:gap-4">
                     {/* Hamburger Icon for mobile view */}
                     <div className="md:hidden mt-3">
@@ -78,7 +79,7 @@ export default function ResponsiveNavbar() {
                     </div>
                 </ul>
                 <section className="flex items-center gap-4 sm:gap-8">
-                    <ShoppingCart className="h-6 w-6 text-grayishblue cursor-pointer" />
+                    <ItemCart></ItemCart>
                     <Image
                         src="/images/image-avatar.png"
                         width={40}

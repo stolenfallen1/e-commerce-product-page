@@ -37,3 +37,15 @@ export const itemPriceStore = create()(
         }
     )
 );
+export const itemImageStore = create()(
+    persist(
+        (set) => ({
+            item_image: null,
+            setItemImage: (image) => set({ item_image: image }),
+        }),
+        {
+            name: "itemImageStore",
+            storage: createJSONStorage(() => localStorage),
+        }
+    )
+);
