@@ -10,7 +10,7 @@ import {
     AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 
-export default function ConfirmationButton({
+export function ConfirmationButton({
     triggerItem,
     dialogTitle,
     dialogDescription,
@@ -19,7 +19,7 @@ export default function ConfirmationButton({
     return (
         <AlertDialog>
             <AlertDialogTrigger asChild>{triggerItem}</AlertDialogTrigger>
-            <AlertDialogContent>
+            <AlertDialogContent className="w-64 sm:w-auto rounded-md">
                 <AlertDialogHeader>
                     <AlertDialogTitle>{dialogTitle}</AlertDialogTitle>
                     <AlertDialogDescription>

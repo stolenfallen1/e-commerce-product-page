@@ -12,9 +12,9 @@ import {
     PopoverContent,
     PopoverTrigger,
 } from "@/components/ui/popover";
-import ConfirmationButton from "./confirmation-button";
+import { ConfirmationButton } from "./confirmation-button";
 
-export default function ItemCart() {
+export function ItemCart() {
     const item_name = itemNameStore((state) => state.item_name);
     const item_pieces = itemPiecesStore((state) => state.item_pieces);
     const item_price = itemPriceStore((state) => state.item_price);
@@ -42,7 +42,7 @@ export default function ItemCart() {
                     <ShoppingCart className="h-5 w-5 text-grayishblue cursor-pointer relative" />
                 </Button>
             </PopoverTrigger>
-            <PopoverContent className="w-80">
+            <PopoverContent className="w-80 mr-2">
                 <h1 className="text-lg font-extrabold border-b pb-3">Cart</h1>
                 {item_name && item_pieces && item_price && item_image ? (
                     <>
