@@ -6,7 +6,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { navigationLinks } from "@/utils/navigation-links";
-import ItemCart from "../cart/item-cart";
+import { ItemCart } from "../cart/item-cart";
 
 export default function ResponsiveNavbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,7 +16,7 @@ export default function ResponsiveNavbar() {
     };
 
     return (
-        <div>
+        <>
             <div
                 className={cn(
                     "fixed inset-0 bg-black bg-opacity-60 z-40",
@@ -24,7 +24,7 @@ export default function ResponsiveNavbar() {
                 )}
                 onClick={onMenuClick}
             ></div>
-            <div className="h-[15vh] flex justify-between items-center py-8 border-b max-w-screen-lg mx-2 sm:mx-8 lg:mx-auto">
+            <div className="flex justify-between items-center py-8 border-b max-w-screen-lg mx-2 sm:mx-8 lg:mx-auto">
                 <ul className="flex items-center gap-2 sm:gap-4">
                     {/* Hamburger Icon for mobile view */}
                     <div className="md:hidden mt-3">
@@ -89,6 +89,6 @@ export default function ResponsiveNavbar() {
                     />
                 </section>
             </div>
-        </div>
+        </>
     );
 }
