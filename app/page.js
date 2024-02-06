@@ -2,10 +2,11 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { ShoppingCart } from "lucide-react";
+import { ShoppingCart, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CounterButton } from "@/components/counter-button";
 import { MobileArrowSlider } from "@/components/mobile-arrow-slider";
+import { ImageModal } from "@/components/image-modal";
 import {
     itemNameStore,
     itemPiecesStore,
@@ -18,6 +19,7 @@ import { thumbnails } from "@/utils/thumbnails";
 export default function Home() {
     const [selectedImage, setSelectedImage] = useState(0);
     const [itemCounter, setItemCounter] = useState(0);
+    const [imageModal, setImageModal] = useState(false);
     const setItemPieces = itemPiecesStore((state) => state.setItemPieces);
     const setItemPrice = itemPriceStore((state) => state.setItemPrice);
     const setItemName = itemNameStore((state) => state.setItemName);
@@ -26,6 +28,14 @@ export default function Home() {
     const handleThumbnailClick = (index) => {
         setSelectedImage(index);
     };
+
+    const openImageModal = () => {
+        setImageModal(true);
+    }
+
+    const closeImageModal = () => {
+        setImageModal(false);
+    }
 
     const handleArrowClick = (direction) => {
         const newIndex =
@@ -65,8 +75,16 @@ export default function Home() {
                             fill
                             className="rounded-lg cursor-pointer"
                             alt="Sneaker Image"
+                            onClick={openImageModal}
                         />
                     </div>
+                    <ImageModal 
+                        isOpen={imageModal} 
+                        imageSource={images[selectedImage]} 
+                        thumbnails={thumbnails}
+                        thumbnailToggle={handleThumbnailClick}
+                        closeImageModal={closeImageModal} 
+                    />
                     <MobileArrowSlider
                         handleLeftIcon={() => handleArrowClick("prev")}
                         handleRightIcon={() => handleArrowClick("next")}
