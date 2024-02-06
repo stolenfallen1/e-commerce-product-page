@@ -1,11 +1,3 @@
-## Table of contents
-
--   [Overview](#overview)
-    -   [The challenge](#the-challenge)
-    -   [Screenshot](#screenshot)
-    -   [Links](#links)
-    -   [Built with](#built-with)
-
 ### The challenge
 
 Users should be able to:
@@ -19,12 +11,18 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./public/screenshots/SC1.png)
+![](./public/screenshots/SC2.png)
+![](./public/screenshots/SC3.png)
+![](./public/screenshots/SC4.png)
+![](./public/screenshots/SC5.png)
+![](./public/screenshots/SC6.png)
+![](./public/screenshots/SC7.png)
 
 ### Links
 
--   Solution URL: [Add solution URL here](https://your-solution-url.com)
--   Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+-   Solution URL: https://github.com/stolenfallen1/e-commerce-product-page
+-   Live Site URL: https://e-commerce-product-page-nu-five.vercel.app/
 
 ### Built with
 
@@ -32,7 +30,5 @@ Users should be able to:
 -   Tailwind
 -   Shadcn-ui
 -   Flexbox
--   CSS Grid
 -   NextJS
 -   ReactJS
--   Mobile-first workflow
